@@ -3,7 +3,7 @@
 # =========================================================================
 
 # Base settings
-set :application, 'vault'
+set :application, 'firefly'
 
 # Stages settings
 set :stages,       %w( staging production )
@@ -12,7 +12,7 @@ set(:rack_env)     { stage }
 require 'capistrano/ext/multistage'
 
 # Repository settings
-set :repository,    "git@mine.ifad.org:vault.git"
+set :repository,    "git@mine.ifad.org:firefly.git"
 set :scm,           "git"
 set :branch,        fetch(:branch, "master")
 set :deploy_via,    :remote_cache
@@ -20,7 +20,7 @@ set :deploy_to,     "/home/rails/apps/#{application}"
 set :use_sudo,      false
 
 # Account settings
-set :user,          fetch(:user, 'vault')
+set :user,          fetch(:user, 'firefly')
 
 ssh_options[:forward_agent] = true
 ssh_options[:auth_methods]  = %w( publickey )
