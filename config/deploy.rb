@@ -79,6 +79,22 @@ namespace :deploy do
     end
     after 'deploy:update_code', 'deploy:db:symlink'
   end
+
+  namespace :config do
+    desc '[internal] Creates the firefly.yml configuration file in shared path.'
+    task :setup do
+      run "mkdir -p #{shared_path}/{firefly,config}"
+      put compile('firefly.yml.erb'), "#{shared_path}/config/firefly.yml"
+    end
+    after 'deploy:setup', 'deploy:config:setup'
+
+
+    desc '[internal] Updates the firefly.yml symlink'
+    task :symlink do
+      run "ln -nfs #{shared_path}/config/firefly.yml #{release_path}/config/firefly.yml"
+    end
+    after 'deploy:update_code', 'deploy:firefly:symlink'
+  end
 end
 
 after 'deploy', 'deploy:cleanup'
