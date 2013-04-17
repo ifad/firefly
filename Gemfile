@@ -7,6 +7,7 @@ gem 'pg'
 
 gem 'sinatra-activerecord', '~> 1.1.2'
 gem 'unicorn'
+gem 'capistrano'
 
 group :development, :test do
   gem 'rake',               '~> 0.9.2'
