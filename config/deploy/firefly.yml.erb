@@ -4,7 +4,7 @@
   session_secret  = Capistrano::CLI.ui.ask('Session secret: ')
 %>
 
-<%= rack_env %>:
+firefly:
   hostname: <%= hostname %>
   api_key: <%= api_key %>
   session_secret: <%= session_secret %>
