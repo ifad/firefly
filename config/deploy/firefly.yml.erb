@@ -1,0 +1,10 @@
+<%
+  hostname        = Capistrano::CLI.ui.ask('Hostname: ')
+  api_key         = Capistrano::CLI.ui.ask('API Key: ')
+  session_secret  = Capistrano::CLI.ui.ask('Session secret: ')
+%>
+
+<%= rack_env %>:
+  hostname: <%= hostname %>
+  api_key: <%= api_key %>
+  session_secret: <%= session_secret %>
