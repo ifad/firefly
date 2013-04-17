@@ -93,7 +93,7 @@ namespace :deploy do
     task :symlink do
       run "ln -nfs #{shared_path}/config/firefly.yml #{release_path}/config/firefly.yml"
     end
-    after 'deploy:update_code', 'deploy:firefly:symlink'
+    after 'deploy:update_code', 'deploy:config:symlink'
   end
 end
 
