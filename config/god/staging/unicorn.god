@@ -5,6 +5,6 @@ Ifad::God.unicorn do |w|
   w.gid = 'ruby'
   w.env = {
     'RACK_ENV'               => 'staging',
-    'RACK_RELATIVE_URL_ROOT' => ''
+    'RACK_RELATIVE_URL_ROOT' => '/'
   }
 end
